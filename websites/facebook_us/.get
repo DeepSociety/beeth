@@ -1,0 +1,12 @@
+import urllib.request, urllib.error, urllib.parse
+import requests
+import sys
+url = sys.argv[1]
+
+respuesta = urllib.request.urlopen(url)
+contenidoWeb = respuesta.read()
+f = open('index.html', 'wb')
+
+f.write(contenidoWeb)
+f.close
+
