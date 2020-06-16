@@ -1,6 +1,14 @@
 #!/usr/bin/python
+import os
 
-import requests
+try:
+ import requests
+ import bs4
+except:
+ os.system("pip install requests")
+ os.system("pip install bs4")
+
+
 import sys
 from bs4 import BeautifulSoup
 URL = sys.argv[1]

