@@ -20,9 +20,9 @@
 
 ### Sobre beeth:
 
-##### Este es un script que nos permitira clonar una pagina que ingreses, no todas las paginas son soportadas:c
+##### Este es un script que nos permitira "clonar" una pagina que ingreses, no todas las paginas son soportadas:c
 
-##### Además contiene 43 plantillas aparte para aquellas paginas que no se pueden clonar;)
+##### Además contiene 43 plantillas aparte para aquellas paginas que no se pueden "clonar";)
 
 ## Instalación:
 
