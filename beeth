@@ -1,4 +1,4 @@
-#Create by https://github.com/HiddenSt4r
+#Create by https://github.com/DeepSociety
 #Si copias deja creditos 😛
 
 trap 'printf "\n";stop;exit 1' 2
@@ -20,7 +20,7 @@ colors="\e[1;3$crnd$s"
 finish() {
 eliminar
 dt
-echo -e "$v[$b*$v]$b beeth by HiddenStar😛\n$v[$b*$v]$b https://github.com/HiddenSt4r"
+echo -e "$v[$b*$v]$b beeth by DeepSociety\n$v[$b*$v]$b https://github.com/DeepSociety"
 
 if [[ -d $carpeta/images ]];then
 rm -rf images
@@ -114,7 +114,7 @@ echo -e "$colors
 
 
        $a[!]$b         Phishing Tool v2.5            $a[!]
-       $a[!]$b    https://github.com/HiddenSt4r      $a[!]
+       $a[!]$b    https://github.com/DeepSociety     $a[!]
        $a[!]$b help            < Ayuda               $a[!]
        $a[!]$b show options    < Opciones            $a[!]
        $a[!]$b show pages      < Paginas disponibles $a[!]
