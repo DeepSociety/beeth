@@ -1016,9 +1016,7 @@ if [[ $show == "t" || $show == "i" || $show == "d" || $show == "u" || $show == "
 if [[ $si_clone == "si" ]];then
 sed -i '1i <head>' $carpeta/index.html
 sed -i '2i </head>' $carpeta/index.html
-else
-NOCLONOLAPAGINAASIQUENOAGREGONADA="XD"
-fi
+
 fi
 
 if [[ $show == "t" ]];then
