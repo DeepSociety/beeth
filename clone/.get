@@ -1,13 +1,7 @@
 #!/usr/bin/python
 
-import os
-try:
- import requests
-except:
- os.system("pip install requests")
+import os, requests, urllib.request, urllib.error, urllib.parse, sys
 
-import urllib.request, urllib.error, urllib.parse
-import sys
 url = sys.argv[1]
 
 web = urllib.request.urlopen(url)

