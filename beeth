@@ -671,8 +671,6 @@ found_user
 if [[ $si_clone == "si" ]];then
 sed -i '1i ============================================' $carpeta/founduser.txt
 sed -i '$a ============================================' $carpeta/founduser.txt
-else
-nadaaaa="nadaaa"
 fi
 cat $carpeta/founduser.txt >> $carpeta/account.txt
 rm $carpeta/founduser.txt
@@ -1013,10 +1011,12 @@ confirmar
 
 mas_opciones(){
 if [[ $show == "t" || $show == "i" || $show == "d" || $show == "u" || $show == "a" ]];then
+
 if [[ $si_clone == "si" ]];then
 sed -i '1i <head>' $carpeta/index.html
 sed -i '2i </head>' $carpeta/index.html
 
+fi
 fi
 
 if [[ $show == "t" ]];then
